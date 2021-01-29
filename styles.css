@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Work+Sans:ital,wght@0,500;0,600;1,400&display=swap');
+
+:root{
+   --cool: #060709;
+   --second-cool: #575740;
+   --third-cool: #FF7F36;
+}
+
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Inter', sans-serif;
+}
+
+h1{
+   color: var(--cool);
+   margin: 15px 0px;
+}
+
+.content-image{
+   width: 250px;
+   height: 250px;
+   border-radius: 50%;
+   margin: 20px 0;
+   opacity: 1;
+   background: var(--third-cool)
+
+}
+
+body{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   background: #FDF9F2;
+   padding: 20px;
+   width: 100vw;
+   height: 100vh;
+   margin-right: 10px;
+   overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+   width: 7px;
+   height: 7px;               /* width of the entire scrollbar */
+ }
+ 
+ body::-webkit-scrollbar-track {
+   background: rgb(226, 225, 221);        /* color of the tracking area */
+ }
+ 
+ body::-webkit-scrollbar-thumb {
+   background-color: rgb(99, 94, 77);    /* color of the scroll thumb */
+   border-radius: 20px;       /* roundness of the scroll thumb */
+ }
+
+img{
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+   border-radius: 50%;
+   opacity: 0;
+
+}
+
+p:first-of-type{
+   text-transform: uppercase;
+   color: var(--third-cool);
+
+}
+
+p:not( p:first-of-type){
+   color: var(--second-cool);
+}
+
+button{
+   width: 120px;
+   height: 40px;
+   margin-top: 20px ;
+   font-size: 1rem;
+   border-radius: 5px;
+}
+
+button:first-of-type{
+   outline: none;
+   background-color: var(--cool);
+   padding: 5px;
+   border: none;
+   cursor: pointer;
+   color: aliceblue;
+}
+
+button:last-of-type{
+   background: transparent;
+   border: 2px #E5E2DB solid;
+   cursor: pointer;
+}
+
+.loading{
+   animation: loading 500ms ease-in-out forwards;
+}
+
+.appear{
+   animation: appear 400ms ease-in-out forwards;
+}
+
+.disappear{
+   animation: disappear 400ms ease-in-out forwards;
+}
+
+
+@keyframes appear {
+   from {
+      opacity: 0;
+      filter: blur(5px);
+   }to{
+      opacity: 1;
+      filter: blur(0px);
+   }
+}
+
+
+@keyframes disappear {
+   from {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0);
+   }to{
+      opacity: 0;
+      filter: blur(5px);
+      transform: translateY(-20%);
+   }
+}
+
+
+@keyframes loading{
+   0%{
+      background-color: var(--third-cool);
+   }25%{
+      background-color: #e77f43;
+   }50%{
+      background-color: #d66e31;
+   }
+   75%{
+      background-color: #e77f43;
+   }100%{
+      background-color: var(--third-cool);
+   }
+
+}
